@@ -1,0 +1,53 @@
+/* portfolio/static/portfolio/style.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Change this to your desired background color */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    background-color: #f0f0f0; /* Ensure container has the same background color */
+}
+
+.sidebar {
+    width: 200px;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar a:hover {
+    background: #555;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 15px;
+    background: #ADD8E6; /* Background color for the content area */
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto; /* Allow content to scroll if it overflows */
+}
+
+.common {
+    color: green;
+}
+
+.unique {
+    color: yellow;
+}

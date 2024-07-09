@@ -1,0 +1,49 @@
+<!-- portfolio/templates/portfolio/main_page.html -->
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<h1>Welcome to PL Quant</h1>
+
+<!-- Tabs -->
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'PortfolioCreation')">Portfolio Creation</button>
+    <button class="tablinks" onclick="openTab(event, 'Results')">Results</button>
+</div>
+
+<!-- Tab Content -->
+<div id="Home" class="tabcontent">
+    <h2>Home</h2>
+    <p>Welcome to the main page of PL Quant.</p>
+</div>
+
+<div id="PortfolioCreation" class="tabcontent" style="display:none;">
+    <h2>Portfolio Creation</h2>
+    <form id="uploadForm" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".xlsx">
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+<div id="Results" class="tabcontent" style="display:none;">
+    <h2>Results</h2>
+    <!-- Include the content for results here -->
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+{% endblock %}
